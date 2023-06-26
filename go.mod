@@ -1,3 +1,3 @@
-module github.com/koffe0522/gmo-payment-go
+module github.com/sansna/gmo-payment-go
 
 go 1.18
