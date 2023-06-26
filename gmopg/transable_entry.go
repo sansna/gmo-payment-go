@@ -20,6 +20,7 @@ type EntryTranArgs struct {
 	Tax          *int    `json:"tax,omitempty"`
 	TdFlag       *string `json:"tdFlag,omitempty"`
 	TdTenantName *string `json:"tdTenantName,omitempty"`
+	Tds2Type     int     `json:"tds2Type,omitempty"`
 }
 
 // EntryTran is

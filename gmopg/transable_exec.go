@@ -15,6 +15,7 @@ type ExecTranArgs struct {
 	Expire       *string  `json:"expired,omitempty"`
 	SecurityCode *string  `json:"securityCode,omitempty"`
 	Token        *string  `json:"token,omitempty"`
+	TokenType    int      `json:"tokenType,omitempty"`
 	Pin          *string  `json:"pin,omitempty"`
 	SiteID       *string  `json:"siteID,omitempty"`
 	SitePass     *string  `json:"sitePass,omitempty"`
@@ -25,12 +26,15 @@ type ExecTranArgs struct {
 	ClientField1 *string  `json:"clientField1,omitempty"`
 	ClientField2 *string  `json:"clientField2,omitempty"`
 	ClientField3 *string  `json:"clientField3,omitempty"`
+
+	RetUrl string `json:"retUrl"`
 }
 
 // ExecTranResult is
 type ExecTranResult struct {
 	Error        ErrorResults
 	Acs          string `json:"acs"`
+	RedirectUrl  string `json:"redirectUrl"`
 	OrderID      string `json:"orderID"`
 	Forward      string `json:"forward"`
 	Method       string `json:"method"`
