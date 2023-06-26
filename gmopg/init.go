@@ -1,6 +1,6 @@
 package gmopg
 
-import "github.com/koffe0522/gmo-payment-go/httpc"
+import "github.com/sansna/gmo-payment-go/httpc"
 
 // GMOPG is
 type GMOPG struct {
