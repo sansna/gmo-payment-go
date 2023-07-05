@@ -10,18 +10,22 @@ type SearchCardArgs struct {
 }
 
 type SearchCardResult struct {
-	Error                  ErrorResults
-	CardSeq                int    `json:"cardSeq"`
-	DefaultFlag            int    `json:"defaultFlag"`
+	Error ErrorResults
+	List  []*SearchCardItem
+}
+
+type SearchCardItem struct {
+	CardSeq                string `json:"cardSeq"`
+	DefaultFlag            string `json:"defaultFlag"`
 	CardName               string `json:"cardName"`
 	CardNo                 string `json:"cardNo"`
 	Expire                 string `json:"expire"`
 	HolderName             string `json:"holderName"`
-	DeleteFlag             int    `json:"deleteFlag"`
+	DeleteFlag             string `json:"deleteFlag"`
 	Brand                  string `json:"brand"`
-	DomesticFlag           int    `json:"domesticFlag"`
+	DomesticFlag           string `json:"domesticFlag"`
 	IssuerCode             string `json:"issuerCode"`
-	DebitPrepaidFlag       int    `json:"debitPrepaidFlag"`
+	DebitPrepaidFlag       string `json:"debitPrepaidFlag"`
 	DebitPrepaidIssuerName string `json:"debitPrepaidIssuerName"`
 	ForwardFinal           string `json:"forwardFinal"`
 }
@@ -45,7 +49,7 @@ func (g *GMOPG) SearchCard(args *SearchCardArgs) (*SearchCardResult, error) {
 
 	if resp.StatusCode == 200 {
 		var ok SearchCardResult
-		if err := json.Unmarshal(resp.Body, &ok); err != nil {
+		if err := json.Unmarshal(resp.Body, &ok.List); err != nil {
 			return nil, err
 		}
 

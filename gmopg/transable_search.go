@@ -39,6 +39,10 @@ type SearchTradeResult struct {
 
 // SearchTrade is
 func (g GMOPG) SearchTrade(args *SearchTradeArgs) (*SearchTradeResult, error) {
+	if args.ShopID == "" {
+		args.ShopPass = g.shopPass
+		args.ShopID = g.shopID
+	}
 	paramsJSON, _ := json.Marshal(args)
 	resp, err := g.client.Do("/payment/SearchTrade.json", paramsJSON)
 	if err != nil {

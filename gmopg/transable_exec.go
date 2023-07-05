@@ -12,7 +12,7 @@ type ExecTranArgs struct {
 	Method       Method   `json:"method"`
 	PayTimes     *int     `json:"payTimes,omitempty"`
 	CardNo       *string  `json:"cardNo,omitempty"`
-	Expire       *string  `json:"expired,omitempty"`
+	Expire       *string  `json:"expire,omitempty"`
 	SecurityCode *string  `json:"securityCode,omitempty"`
 	Token        *string  `json:"token,omitempty"`
 	TokenType    int      `json:"tokenType,omitempty"`
@@ -50,6 +50,10 @@ type ExecTranResult struct {
 
 // ExecTran is
 func (g GMOPG) ExecTran(args *ExecTranArgs) (*ExecTranResult, error) {
+	if args.MemberID != nil {
+		args.SiteID = &g.siteID
+		args.SitePass = &g.sitePass
+	}
 	paramsJSON, _ := json.Marshal(args)
 	resp, err := g.client.Do("/payment/ExecTran.json", paramsJSON)
 	if err != nil {

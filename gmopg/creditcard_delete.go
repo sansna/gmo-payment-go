@@ -10,7 +10,7 @@ type DeleteCardArgs struct {
 
 type DeleteCardResult struct {
 	Error   ErrorResults
-	CardSeq int `json:"cardSeq"`
+	CardSeq string `json:"cardSeq"`
 }
 
 func (g *GMOPG) DeleteCard(args *DeleteCardArgs) (*DeleteCardResult, error) {

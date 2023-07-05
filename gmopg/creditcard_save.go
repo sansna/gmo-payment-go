@@ -14,7 +14,7 @@ type SaveCardArgs struct {
 
 type SaveCardResult struct {
 	Error                  ErrorResults
-	CardSeq                int    `json:"cardSeq"`
+	CardSeq                string `json:"cardSeq"`
 	CardNo                 string `json:"cardNo"`
 	Forward                string `json:"forward"`
 	Brand                  string `json:"brand"`
