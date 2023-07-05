@@ -11,7 +11,7 @@ type SecureTran2Result struct {
 	Error       ErrorResults
 	OrderID     string `json:"orderID"`
 	Forward     string `json:"forward"`
-	Method      string `json:"method"`
+	Method      Method `json:"method"`
 	PayTimes    string `json:"payTimes"`
 	Approve     string `json:"approve"`
 	TranID      string `json:"tranID"`
