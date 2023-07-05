@@ -18,9 +18,9 @@ type SaveCardResult struct {
 	CardNo                 string `json:"cardNo"`
 	Forward                string `json:"forward"`
 	Brand                  string `json:"brand"`
-	DomesticFlag           int    `json:"domesticFlag"`
+	DomesticFlag           string `json:"domesticFlag"`
 	IssuerCode             string `json:"issuerCode"`
-	DebitPrepaidFlag       int    `json:"debitPrepaidFlag"`
+	DebitPrepaidFlag       string `json:"debitPrepaidFlag"`
 	DebitPrepaidIssuerName string `json:"debitPrepaidIssuerName"`
 	ForwardFinal           string `json:"forwardFinal"`
 }
