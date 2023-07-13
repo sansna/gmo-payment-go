@@ -66,4 +66,5 @@ const (
 	JReturn  = JobCd("RETURN")
 	JReturnx = JobCd("RETURNX")
 	JSauth   = JobCd("SAUTH")
+	JCancel  = JobCd("CANCEL")
 )
