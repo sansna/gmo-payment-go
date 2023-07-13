@@ -30,6 +30,10 @@ type AlterTranResult struct {
 
 // AlterTran is
 func (g GMOPG) AlterTran(args *AlterTranArgs) (*AlterTranResult, error) {
+	if args.ShopID == "" || args.ShopPass == "" {
+		args.ShopID = g.shopID
+		args.ShopPass = g.shopPass
+	}
 	paramsJSON, _ := json.Marshal(args)
 	resp, err := g.client.Do("/payment/AlterTran.json", paramsJSON)
 	if err != nil {
