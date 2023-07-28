@@ -40,3 +40,13 @@ func Init(c *Config) GMOPG {
 
 	return gmopg
 }
+
+func (g GMOPG) GetShopIDPW() (string, string) {
+	return g.shopID, g.shopPass
+}
+func (g GMOPG) GetSiteIDPW() (string, string) {
+	return g.siteID, g.sitePass
+}
+func (g GMOPG) GetClient() httpc.IClinet {
+	return g.client
+}
