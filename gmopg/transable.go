@@ -41,6 +41,7 @@ const (
 	Edy         = PayType("2")
 	Cvs         = PayType("3")
 	DirectDebit = PayType("28")
+	Paypay      = PayType("45")
 
 	Unprocessed   = Status("UNPROCESSED")
 	Authenticated = Status("AUTHENTICATED")
