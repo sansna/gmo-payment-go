@@ -58,6 +58,11 @@ const (
 	Payfail       = Status("PAYFAIL")
 	Expired       = Status("EXPIRED")
 	Cancel        = Status("CANCEL")
+	AuthProcess   = Status("AUTHPROCESS")
+	ReqSales      = Status("REQSALES")
+	ReqPush       = Status("REQPUSH")
+	PushCancel    = Status("PUSHCANCEL")
+	PushExpired   = Status("PUSHEXPIRED")
 
 	JCheck   = JobCd("CHECK")
 	JCapture = JobCd("CAPTURE")
